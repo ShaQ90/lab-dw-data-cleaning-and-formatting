@@ -7,7 +7,8 @@ def clean_col_name (df):
 
 
 def format_row_data(df):
-    df.gender = df.gender.apply(lambda x: "M"  if x =="Male" else ("F" if x == 'Femal' else ("F" if x == 'female' else x ) ) )
+    df.gender = df.gender.apply(lambda x: "M"  if x =="Male" else 
+                                ("F" if x == 'Femal' else ("F" if x == 'female' else x ) ) )
     df.state = df.state.apply(lambda x: "California" if x == "Cali" else ("Arizona" if x == 'AZ' else("Washington" if x == 'WA' else x )) )
     df.education = df.education.apply(lambda x: "Bachelor" if x == "Bachelors" else x)
     df.customer_lifetime_value = df.customer_lifetime_value.apply(lambda x : x[:-1] if pd.notnull(x) else x)
